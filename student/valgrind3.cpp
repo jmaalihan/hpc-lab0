@@ -12,8 +12,8 @@
 
 int main(){
 	char a[10];
-	strcpy(a, "blueberry muffins"); 
-	printf("%s\n", a[11]);
+	strcpy(a, "muffins"); 
+	printf("%s\n", a);
 
 	return 0;
 }

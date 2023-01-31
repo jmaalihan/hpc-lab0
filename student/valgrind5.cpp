@@ -9,9 +9,8 @@
     3. Pass Valgrind
 */
 
-int print_array(int arr[]) { 
+int print_array(int arr[], int arr_size) { 
     int count = 0;
-    int arr_size = sizeof(arr) / sizeof(arr[0]);
 
     for (int i = 0; i < arr_size; i++) { 
         printf("%d\n", arr[i]); 
@@ -23,7 +22,8 @@ int print_array(int arr[]) {
   
 int main() {
     int arr[4] = { 1, 2, 3, 4 }; 
-    int printed_count = print_array(arr);
+    int arr_size = sizeof(arr) / sizeof(arr[0]);
+    int printed_count = print_array(arr, arr_size);
 
     if(printed_count != 4){
     	void* force_error = malloc(16);

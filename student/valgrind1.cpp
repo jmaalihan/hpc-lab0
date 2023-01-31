@@ -10,6 +10,7 @@
 
 int main() { 
     int* ptr = (int*)malloc(sizeof(int));
+	free(ptr); // here
 
     return 0;
 } 

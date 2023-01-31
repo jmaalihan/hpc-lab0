@@ -13,9 +13,14 @@
 int main() { 
 	int size = 10;
     int* p = (int*)malloc(sizeof(int) * size); 
+
+	// initialize values
+    for (int i = 0; i < size; i++) { 
+        p[i] = 0; 
+	}
     
-    for (int i = 0; i <= size; i++) {
-        p[i] += 100;
+    for (int i = 0; i < size; i++) { // changed bounds
+        p[i] += 100; 
         printf("%d\n", p[i]);
 
         // DO NOT DELETE THIS IF STATEMENT
@@ -24,4 +29,5 @@ int main() {
     		exit(1);
     	}
     }
+	free(p); // no leaks
 }

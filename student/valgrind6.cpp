@@ -11,11 +11,10 @@
 */
 
 void fubar(void* buffer, int count) { 
-    buffer = malloc(sizeof(int) * count);
     int* local_buffer = (int*)buffer;
 
     for(int i = 0; i < count; i++){
-        *local_buffer += i;
+        *(local_buffer +i) = i; // fixed
         printf("%d\n", local_buffer[i]);
     }
 } 
@@ -24,7 +23,7 @@ int main() {
     int count = 10;
     int* buffer = (int*)malloc(sizeof(int) * count);
     
-    fubar((void*)(++buffer), count);
+    fubar((void*)(buffer), count); // fixed
     free(buffer);
 
     return 0; 

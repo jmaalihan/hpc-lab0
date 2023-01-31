@@ -14,7 +14,7 @@ int main() {
     int a = 10; 
     int* p = &a; 
   
-    *p++;
+    (*p)++; // order of operations
     printf("Value: %d\n", a);
 
     // DO NOT MODIFY ANYTHING BELOW THIS COMMENT
